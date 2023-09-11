@@ -1,8 +1,12 @@
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+
+        // -----------------------  Working with arrays ----------------------------
 
         // Array:- is the packet that holds many variable with same data type
         // Array --> Fixed size
@@ -46,7 +50,6 @@ public class Main {
         // or  ----------------
         Arrays.stream(numbers).forEach(System.out::println);
 
-        // -------------------------------------------------------------------------
 
         // Array with data type char
         char[]chars=new char[4];
@@ -73,9 +76,38 @@ public class Main {
         System.out.println(Arrays.deepToString(board));
 
 
+        // -------------------------- Working With Lists ------------------------
 
+        // ArrayList :-
+            // An ordered collection aka sequence,
+            // allow duplicates,
+            // not fixed in size like array,
+            // fast for data retrievals,
+            // various implementation => ArrayList - Stack - Vector - Others
 
+        // List :-
 
+        // declare a colors list
+        List users =new ArrayList();
 
+        // use list built in method to deals with list data
+        users.add("Mahmoud Matar");
+        users.add(34.2);
+
+        // print user list and its size
+        System.out.println(users +" with size : "+users.size()); // or
+        users.stream().forEach(System.out::println);  // or
+        for (int i=0;i<users.size();i++){
+            System.out.println(users.get(i));
+        }
+
+        // another way to declare list of element
+        List phones=List.of(
+             "01128673348",
+             "0122007298",
+             "01111614941"
+        );
+        System.out.println(phones.contains("01128673348")); // => true
+        System.out.println(phones.contains("01555555555")); // => false
     }
 }
